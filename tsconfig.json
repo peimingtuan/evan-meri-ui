@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@": [
+                "./packages"
+            ]
+        },
+        "target": "esnext", // target用于指定编译后js文件里的语法应该遵循哪个JavaScript的版本的版本目标: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'
+        "module": "esnext",
+        "strict": true,
+        "strictNullChecks": true,
+        "allowJs": true,
+        "jsx": "react",
+        "jsxFactory": "h",
+        "jsxFragmentFactory": "Fragment",
+        "moduleResolution": "Node",
+        "declaration": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "forceConsistentCasingInFileNames": true,
+        "composite": true,
+        "allowSyntheticDefaultImports": true,
+        "removeComments": true, // 删除注释
+        "skipLibCheck": true,
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "resolveJsonModule":true
+    }
+}

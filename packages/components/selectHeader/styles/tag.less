@@ -1,0 +1,42 @@
+@import '../../../theme/tools.less';
+
+// 素有按钮的标签
+.m-select-tag-wrap {
+	display: inline-block;
+}
+.m-select-tag {
+	box-sizing: border-box;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2px 8px;
+	font-weight: 400;
+	font-size: var(--font-m);
+	color: var(--title-color);
+	min-height: 22px;
+	background-color: var(--gray-200);
+	border-radius: var(--small-radius);
+	&-content {
+		line-height: var(--line-xl);
+		word-wrap: break-word;
+		word-break: break-all;
+		&[is-set-width='true'] {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+	&-icon {
+		width: 16px;
+		height: 16px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: transform 0.2s, background-color 0.2s;
+		flex-shrink: 0;
+		margin-left: 5px;
+		&:hover {
+			background-color: var(--gray-300);
+		}
+	}
+}

@@ -1,0 +1,32 @@
+<template>
+  <m-avatar
+    :size="100"
+    radius="4px"
+    src="/meri-plus/avatar-default.png"
+    fit="fill"
+  ></m-avatar>
+  <m-avatar
+    :size="100"
+    radius="4px"
+    src="/meri-plus/avatar-default.png"
+    fit="contain"
+  ></m-avatar>
+  <m-avatar
+    :size="100"
+    radius="4px"
+    src="/meri-plus/avatar-default.png"
+    fit="cover"
+  ></m-avatar>
+  <m-avatar
+    :size="100"
+    radius="4px"
+    src="/meri-plus/avatar-default.png"
+    fit="none"
+  ></m-avatar>
+  <m-avatar
+    :size="100"
+    radius="4px"
+    src="/meri-plus/avatar-default.png"
+    fit="scale-down"
+  ></m-avatar>
+</template>

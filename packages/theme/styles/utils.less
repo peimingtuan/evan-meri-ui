@@ -1,0 +1,27 @@
+.m-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+body {
+  overflow-y: overlay;
+}
+
+.ellipsis-title {
+  padding: 8px 12px;
+  position: fixed;
+  font-size: 12px;
+  box-shadow: none;
+  border-radius: 4px;
+  z-index: 9999;
+  word-break: break-all;
+  color: #fff;
+  background-color: var(--popover-bg-color);
+}
+
+.ellipsis-title.light {
+  background-color: #fff;
+  color: inherit;
+  box-shadow: 0px 2px 10px 0px #1F24291A;
+}

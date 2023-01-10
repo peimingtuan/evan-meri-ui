@@ -1,0 +1,103 @@
+@import '../../../theme/tools.less';
+
+.m-loading {
+
+  &-mask {
+    position: absolute;
+    z-index: 2000;
+    background-color: rgba(255, 255, 255, 1);
+    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .3s;
+    cursor: auto;
+
+    &.is-fullscreen {
+      position: fixed;
+    }
+  }
+
+  &-parent--relative {
+    position: relative;
+  }
+
+  &-parent--hidden {
+    overflow: hidden;
+  }
+
+  &-icon {
+    width: 130px;
+  }
+
+  &-spinner {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+  }
+
+  &-load-text {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: var(--gray-900);
+  }
+
+  &-animation {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--lottie {
+      position: absolute;
+    }
+
+  }
+
+  &-bar {
+    width: 128px;
+    height: 4px;
+    background-color: var(--gray-200);
+    border-radius: 20px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--progress-bar);
+      height: 100%;
+      background-color: var(--blue-500);
+      border-radius: 20px;
+      transition: width .1s linear;
+    }
+
+  }
+
+  &-loading-fade-enter-from, &-loading-fade-leave-to {
+    opacity: 0
+  }
+
+  &-lottieName{
+    &-ball{
+        left: -10px;
+    }
+  }
+
+}

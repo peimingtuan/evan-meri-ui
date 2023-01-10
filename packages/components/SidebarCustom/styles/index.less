@@ -1,0 +1,178 @@
+@import '../../../theme/styles/base.less';
+
+.p-SidebarCustomProps-box {
+    height: 100vh;
+    position: relative;
+
+    .p-dragAnddrop,.p-dragAnddropHide{
+        position: absolute;
+        left: 0px;
+        width: 4px;
+        height: 100%;
+        z-index: 100;
+        top: 0;
+        cursor: col-resize;
+        &::after{
+            content:"";
+            display: block;
+            width: 10px;
+            margin-left:4px;
+            height: 100%;
+        }
+    }
+
+    .p-dragAnddropHide{
+        cursor: auto;
+    }
+
+    .p-dragAnddrop:hover,.p-dragAndMove {
+        background: var(--blue-500);
+        
+    }
+
+    .p-dragAnddrop-div {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 12px;
+        height: 100%;
+
+    }
+
+
+    .backgroundClicko {
+        background: var(--gray-100);
+        cursor: e-resize;
+    }
+
+    .backgroundClick {
+        background: var(--blue-500);
+        cursor: e-resize;
+    }
+
+
+    .p-SidebarCustomProps {
+        // min-width: 240px;
+        max-width: 680px;
+        height: 100%;
+        background: var(--gray-100);
+        margin: 0 13px;
+        position: relative;
+        animation: myfirstshow 0.5s;
+
+        .p-content {
+            overflow: hidden;
+            height: 100%;
+        }
+    }
+}
+
+.p-SidebarCustomPropsHide {
+    min-width: 12px;
+    height: 100%;
+    background: var(--gray-100);
+    margin: 0 13px;
+    position: relative;
+    animation: myfirsthide 0.5s;
+
+    .p-content {
+        overflow: hidden;
+        height: 100%;
+    }
+}
+
+@keyframes myfirsthide {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 12px;
+    }
+}
+
+@keyframes myfirstshow {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+.p-SidebarCustomProps-icon {
+    .icon-img-right {
+        width: 50px;
+        height: 60px;
+        position: absolute;
+        left: 2px;
+        z-index: 1000;
+        cursor: pointer;
+        top: 0px;
+        animation: leftHide 0.5s reverse;
+        opacity: 0;
+        &:hover,&.showIcon{
+            opacity: 1;
+        }
+    }
+
+    .icon-img-left {
+        width: 50px;
+        height: 60px;
+        position: absolute;
+        left: -8px;
+        z-index: 1000;
+        cursor: pointer;
+        top: 0px;
+        animation: leftHide 0.5s;
+        opacity: 0;
+        &:hover,&.showIcon{
+            opacity: 1;
+        }
+
+    }
+
+    @keyframes leftHide {
+        0% {
+            left: 2px;
+        }
+
+        100% {
+            left: 94%;
+        }
+    }
+
+    @keyframes resident {
+        from {
+            left: 94%;
+        }
+
+        to {
+            left: 2px;
+        }
+    }
+
+    .icon-img-right>svg:hover {
+
+        rect {
+            fill: var(--blue-500) !important;
+        }
+
+        path {
+            fill: #fff;
+        }
+    }
+
+    .icon-img-left>svg:hover {
+
+        rect {
+            fill: var(--blue-500) !important;
+        }
+
+        path {
+            fill: #fff;
+        }
+    }
+}

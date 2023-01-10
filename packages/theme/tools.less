@@ -1,0 +1,107 @@
+.global(@selector, @attr) {
+    [class^=m-]@{selector} & {
+        @{attr}: @disabled;
+    }
+}
+
+// 单个选择器的函数
+.selector(@selector, @attr) {
+    &@{selector} {
+        @attr();
+    }
+}
+
+// hover 状态
+.hover(@attr) {
+    .selector(~':hover', @attr);
+}
+
+// hover 状态
+.active(@attr) {
+    .selector(~':active', @attr);
+}
+
+
+
+// 封装好的颜色变量（鼠标对整体组件生效）
+.g-global(@selector, @attr) {
+    [class^=m-]@{selector}& {
+        @attr();
+    }
+}
+
+.g-hover(@attr) {
+    .g-global(~':hover', {
+            @attr();
+            cursor: pointer;
+        }
+
+    );
+}
+
+.g-active(@attr) {
+    .g-global(~':active', @attr);
+}
+
+.g-disabled(@attr) {
+    .g-global(~'.disabled', {
+            @attr();
+            cursor: not-allowed;
+            * {
+                pointer-events: none;
+            }
+        }
+
+    );
+
+    .g-global(~'[disabled]:not([disabled=false])', {
+            @attr();
+            cursor: not-allowed;
+
+            * {
+                pointer-events: none;
+            }
+        }
+
+    );
+}
+
+.g-loading(@attr) {
+    .g-global(~'.loading', {
+            @attr();
+            pointer-events: none;
+        }
+
+    );
+}
+
+.g-active(@attr) {
+    .g-global(':active', @attr);
+}
+
+// 具体属性封装
+
+.g-disabled-bg() {
+    .g-disabled( {
+            background: var(--gray-200);
+        }
+
+    )
+}
+
+.g-disabled-border() {
+    .g-disabled( {
+            border-color: var(--gray-400);
+        }
+
+    )
+}
+
+.g-disabled-text() {
+    .g-disabled( {
+            color: var(--gray-400);
+        }
+
+    )
+}
+

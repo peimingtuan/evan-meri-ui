@@ -1,0 +1,33 @@
+@import '../../../theme/tools.less';
+
+.m-logo {
+	position: relative;
+	display: inline-block;
+
+	.logo {
+		position: absolute;
+		top: 50%;
+		right: 50%;
+		background-color: var(--red-500);
+		color: var(--gray-0);
+		border-radius: 11px;
+		transform: translate(var(--radius), var(--radius));
+		min-width: 8px;
+		min-height: 8px;
+		// line-height: 18px;
+		font-size: 12px;
+		text-align: center;
+		border: 1px solid #fff;
+		z-index: 2;
+		&.has {
+			min-width: 19px;
+			min-height: 19px;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;
+			padding: 0px 3px;
+			z-index: 2;
+		}
+	}
+}

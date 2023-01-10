@@ -1,0 +1,34 @@
+.m-avatar {
+    /* 大小 */
+    --size-small: 24;
+    --size-medium: 32;
+    --size-large: 40;
+    --fit: fill;
+    /* 样式 */
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    // display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--size) * 1px);
+    height: calc(var(--size) * 1px);
+    // line-height: calc(var(--size) * 1px);
+    line-height: 1em;
+    font-size: calc(var(--fontSize) * 1px);
+    color: var(--color);
+    background-color: var(--bgColor);
+    border-radius: var(--border-radius);
+
+    .text {
+        // 0.3 = Math.sin(Math.PI / 180 * 45)
+        margin: calc(var(--size) * 1px / 2 * 0.3);
+    }
+
+    >img {
+        width: 100%;
+        height: 100%;
+        object-fit: var(--fit);
+    }
+}

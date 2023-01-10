@@ -1,0 +1,108 @@
+.m-drawer {
+    &-mask {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        // height: calc(100vh - 56px);
+        width: 100vw;
+        z-index: 6000;
+        background-color: #626C78;
+        opacity: .5;
+    }
+
+    &-container {
+        position: fixed;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 100vh;
+        right: 0;
+        bottom: 0;
+        max-width: 960px;
+        box-sizing: border-box;
+        width: auto;
+        min-width: 240px;
+        background-color: var(--gray-0);
+        box-shadow: var(--small-shadow);
+        z-index: 6001;
+        transition: all 0.8s;
+
+        &-header {
+            height: 56px;
+            width: 100%;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--gray-200);
+
+            &-title {
+                flex: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: var(--gray-900);
+                font-weight: 700;
+                font-size: 16px;
+            }
+
+            &-icon {
+                width: 20px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .m-button+.m-button {
+            margin-left: 12px;
+        }
+
+        &-content {
+            width: auto;
+            overflow-y: auto;
+            padding: 0 32px;
+        }
+
+        &-content.draw_fixed {
+            flex: 1;
+        }
+
+        &-footer {
+            position: sticky;
+            width: 100%;
+            height: 72px;
+            background: var(--gray-0);
+            padding: 20px 32px;
+            bottom: 0;
+            left: 0;
+
+            &.shadow {
+                box-shadow: 0px -4px 4px rgb(27 33 41 / 12%);
+            }
+
+            &.line {
+                border-top: 1px solid var(--gray-200);
+            }
+        }
+
+
+    }
+
+    &-enter-active,
+    &-leave-active {
+        transition: opacity 1s;
+    }
+
+    &-enter-from,
+    &-leave-to {
+        opacity: 0;
+    }
+
+    &-enter-to,
+    &-leave-from {
+        opacity: 1;
+    }
+}

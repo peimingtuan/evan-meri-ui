@@ -1,0 +1,103 @@
+  .m-scorllbar-body {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    overflow: overlay;
+    position: relative;
+    outline: none;
+    -webkit-overflow-scrolling: touch;
+
+    * {
+      -ms-overflow-style: auto;
+    }
+
+    /* PC端时生效 隐藏默认滚动条 */
+    &.isPc {
+      -ms-overflow-style: none !important; // IE/Edge
+      scrollbar-width: none; // Firefox
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    /* 移动端时生效 解决安卓默认不显示dom滚动条 */
+    &.isAndroid {
+      &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(200, 200, 200, 0.4);
+      }
+    }
+
+    &.isSmooth {
+      scroll-behavior: smooth;
+    }
+  }
+  .m-scorllbar-body:hover {
+    .m-scorllbar-vertical-track-h,.m-scorllbar-vertical-track-w {
+      opacity: 0.8 !important;
+    }
+  }
+  .m-scorllbar-content {
+    // width: fit-content;
+  }
+  .m-scorllbar-vertical-track-disabled {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .m-scorllbar-vertical-track-h {
+    position: absolute;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 2px;
+    cursor: pointer;
+    transition: opacity 200ms, width 200ms;
+    overflow-y: auto;
+
+    &.show {
+      opacity: 1 !important;
+    }
+
+    &.left {
+      left: 0;
+      right: auto;
+    }
+
+    &>div {
+      border-radius: 999px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+  }
+
+  .m-scorllbar-vertical-track-w {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 9;
+    padding: 2px;
+    cursor: pointer;
+    transition: opacity 200ms, height 200ms;
+
+    &.show {
+      opacity: 1 !important;
+    }
+
+    &.top {
+      top: 0;
+      bottom: auto;
+    }
+
+    &>div {
+      border-radius: 999px;
+    }
+  }

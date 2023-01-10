@@ -1,0 +1,1 @@
+export const DEBOUNCE_NUMBER = 100;

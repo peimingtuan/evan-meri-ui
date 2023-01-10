@@ -1,0 +1,347 @@
+.no-select {
+  -webkit-appearance: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.m-default-height {
+  height: 28px;
+  min-height: 28px;
+}
+
+.m-small-height {
+  height: 24px;
+  min-height: 24px;
+}
+
+.m-mini-height {
+  height: 22px;
+  min-height: 22px;
+  font-size: 12px;
+}
+
+
+.m-pagination-size {
+  width: var(--pagination-size);
+  height: var(--pagination-size);
+  min-width: var(--pagination-size);
+  min-height: var(--pagination-size);
+  font-size: var(--pagination-text-size);
+}
+
+.m-pagination+.m-pagination {
+  margin-top: 10px;
+}
+
+.m-pagination {
+  position: relative;
+  display: flex;
+  font-size: 14px;
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .m-page-container.disabled {
+    cursor: not-allowed;
+
+    .m-page-item {
+      pointer-events: none;
+    }
+  }
+
+  .m-page-layout {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // 分页容器
+  .m-page-container {
+    display: flex;
+    align-items: center;
+    .m-small-height; // 单个分页按钮
+
+    .m-page-item {
+      .m-pagination-size;
+      .m-page-layout;
+      list-style: none;
+      float: left;
+      box-sizing: border-box;
+      text-align: center;
+      margin: 0 2px;
+      border-radius: 4px;
+      cursor: pointer;
+      .no-select;
+
+      .page-icon {
+        font-size: 14px;
+        color: var(--pagination-icon-color);
+
+        &.m-you {
+          transform: rotate(-90deg);
+        }
+
+        &.m-zuo {
+          transform: rotate(90deg);
+        }
+      }
+
+      .page-text {
+        color: var(--pagination-text-color);
+      }
+
+      &:hover {
+        background-color: var(--pagination-nobg-color-hover);
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .ri-more-fill {
+      .m-pagination-size;
+      .m-page-layout;
+      list-style: none;
+      float: left;
+      font-weight: normalF;
+      color: var(--pagination-text-color);
+      cursor: pointer;
+      .no-select;
+
+      &.more {
+        margin-top: 2px;
+      }
+      &.IconOpen {
+        font-size: 12px;
+      }
+
+      &.m-you {
+        margin-left: 3px;
+        transform: rotate(-90deg);
+      }
+
+      &.m-zuo {
+        transform: rotate(90deg);
+        margin-right: 3px;
+      }
+
+    }
+
+    // 激活状态
+    .page-item-active {
+      background-color: var(--pagination-bg-active);
+
+      &:hover {
+        background-color: var(--pagination-bg-active);
+      }
+
+      .page-text,
+      .page-icon {
+        color: var(--pagination-active);
+      }
+    }
+
+
+    .page-item-disabled.page-item-active {
+      background-color: var(--pagination-nobg-disabled-active);
+    }
+
+    // 禁用状态
+    .page-item-disabled {
+      cursor: not-allowed;
+
+      .page-icon {
+        color: var(--pagination-disabled-icon-color);
+      }
+
+      &.m-prev-page,&.m-next-page{
+        &:hover {
+          background: none;
+        }
+      }
+    }
+
+    // 总数
+    .m-page-total,
+    .m-page-totalPages {
+      .m-default-height;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+
+      .page-text {
+        margin: 0;
+        color: #8c8c8c;
+        font-size: 13px;
+      }
+    }
+
+    // 跳转组件
+    .m-page-jumper {
+      display: flex;
+      align-items: center;
+
+      .page-text {
+        margin: 0 8px;
+        color: #8c8c8c;
+      }
+
+      .m-input {
+        width: 60px !important;
+        min-width: 60px;
+        input {
+          text-align: center;
+          color: var(--title-color)
+        }
+      }
+    }
+  }
+
+  // 带背景
+  .container-background {
+    .m-default-height;
+
+    .m-page-item {
+      margin: 0 4px;
+      border: 1px solid var(--pagination-border-color);
+
+      &:hover {
+        background-color: #ffffff;
+        border: 1px solid var(--pagination-active);
+
+        .page-text,
+        .page-icon {
+          color: var(--pagination-active);
+        }
+      }
+
+      .ri-more-fill {
+        &:hover {
+          color: var(--pagination-active);
+
+        }
+      }
+    }
+
+    .page-item-disabled.page-item-active {
+      background-color: var(--pagination-bg-active);
+    }
+
+    // 激活状态
+    .page-item-active {
+      background-color: var(--pagination-bg-active);
+      border: 1px solid var(--pagination-border-active);
+
+      .page-text,
+      .page-icon {
+        color: var(--pagination-active);
+      }
+
+      &:hover {
+        background-color: var(--pagination-bg-active);
+
+        .page-text,
+        .page-icon {
+          color: var(--pagination-active);
+        }
+      }
+    }
+
+    // 禁用状态
+    .page-item-disabled {
+      cursor: not-allowed;
+      background-color: var(--pagination-disabled-bg-color);
+
+      .page-icon {
+        color: var(--pagination-disabled-bg-icon-color);
+      }
+
+      &:hover {
+        background-color: var(--pagination-disabled-bg-color);
+        border: 1px solid var(--pagination-border-color);
+
+        .page-text,
+        .page-icon {
+          color: var(--pagination-disabled-bg-icon-color);
+        }
+      }
+      &.m-prev-page,&.m-next-page{
+        &:hover {
+          background-color: var(--pagination-disabled-bg-color);
+        }
+      }
+    }
+    .m-page-item.page-item-disabled{
+      border-color: var(--gray-300);
+    }
+  }
+
+  .m-page-sizes {
+    margin: 0 8px;
+
+    .m-select-inner {
+      // width: 110px !important;
+      color: var(--pagination-text-color);
+    }
+
+    .m-select {
+      height: 28px
+    }
+  }
+
+  // 简洁分页
+  .container-simple {
+    .m-page-layout;
+
+    .m-page-item {
+      .m-mini-height;
+      width: 22px;
+      min-width: 22px;
+
+      .page-icon {
+        font-size: 14px;
+        color: #8c8c8c;
+      }
+    }
+
+    .m-page-simple {
+      .m-page-layout;
+
+      .m-page-item {
+        .m-mini-height;
+        width: 22px;
+        min-width: 22px;
+      }
+
+      .simple-separator {
+        width: 22px;
+        min-width: 22px;
+        text-align: center;
+      }
+
+      .m-input {
+        width: 30px;
+
+        .m-input-inner {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

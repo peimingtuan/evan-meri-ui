@@ -1,0 +1,190 @@
+@import '../../../theme/tools.less';
+
+// 素有按钮的标签
+.m-time-picker {
+    &-main {
+        height: 300px;
+        box-shadow: 0px 2px 10px rgba(31, 36, 41, 0.1);
+        border-radius: var(--big-radius);
+        padding: 12px 8px 0 8px;
+        box-sizing: border-box;
+
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        &-button {
+            display: flex;
+            box-shadow: inset 0px 1px 0px #E4E6E7;
+            justify-content: flex-end;
+            height: 48px;
+            align-items: center;
+
+            >.m-button:nth-child(1) {
+                margin-right: 12px;
+            }
+        }
+
+        &-content {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &-panel {
+        height: 250px;
+        box-shadow:none;
+    }
+    &-trigger {
+        width: 208px;
+        height: 32px;
+        line-height: 32px;
+        border: 1px solid var(--gray-400);
+        border-radius: 4px;
+        cursor: pointer;
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: space-between;
+        transition: border .3s;
+
+        &-left {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+        }
+
+        &-center {
+            flex: 1;
+            font-size: var(--font-m);
+        }
+        &-place{
+            color: var(--gray-400)
+        }
+        .g-disabled-bg();
+        .g-disabled-border();
+    }
+    & .errortext {
+        position: relative;
+        border: 1px solid var(--red-500) !important;
+
+        .text {
+            color: var(--red-500);
+        }
+    }
+    &-driver {
+        width: 1px;
+        background-color: var(--gray-300);
+        height: 240px;
+    }
+
+    &-trigger:hover {
+        border-color: var(--blue-500);
+    }
+
+    &-select {
+        height: 240px;
+        display: flex;
+
+        .time-content {
+            height: 240px;
+            overflow: hidden !important;
+
+
+            &-scroll {
+                width: 64px;
+                height: 240px;
+                overflow: auto;
+
+                &>ul {
+                    padding-bottom: 205px;
+                }
+            }
+        }
+
+        .time-content:not(:last-child) {
+            margin-right: 12px;
+
+        }
+
+        .time-content:hover {
+            overflow: auto;
+        }
+
+        .time-content-mul:before,
+        .time-content-single::before {
+            color: var(--blue-500);
+            background-color: var(--blue-100);
+            border-radius: 4px;
+            content: "";
+            display: block;
+            height: 24px;
+            width: 56px;
+            position: absolute;
+        }
+
+        .time-content-mul:before {
+            width: 56px;
+        }
+
+        .time-content-single:before {
+            width: 124px;
+        }
+
+        .time-item {
+            width: 56px;
+            height: 24px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 24px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            transition: background-color .3s;
+            position: relative;
+
+            &-iscurrent {
+                color: var(--blue-500);
+                font-weight: 700;
+            }
+
+            &.disabled {
+                color: var(--disable-title);
+                cursor: not-allowed;
+            }
+        }
+
+        .time-item:not(.time-item-iscurrent, .disabled):hover {
+            background-color: var(--gray-200);
+
+        }
+    }
+}
+
+.m-timepicker-window {
+    transition: height 0.2s;
+    background: var(--gray-0);
+    position: relative;
+}
+
+.m-timepicker-zoom-enter-active,
+.m-timepicker-zoom-leave-active {
+    transition: transform 0.2s, opacity 0.2s;
+	transform-origin: center top;
+	&[placement^='top'] {
+		transform-origin: center bottom;
+	}
+}
+
+.m-timepicker-zoom-enter-from,
+.m-timepicker-zoom-leave-to {
+    opacity: 0;
+    transform: scaleY(0);
+}
+.m-select-zoom-enter-to,
+.m-select-zoom-leave-from {
+	opacity: 1;
+	transform: scaleY(1);
+}

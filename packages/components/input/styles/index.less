@@ -1,0 +1,290 @@
+@import '../../../theme/tools.less';
+
+.m-input {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    //border: 1px solid var(--gray-400);
+    width: 200px;
+    //line-height: 30px;
+    min-width: 96px;
+    min-height: 30px;
+    box-sizing: content-box;
+    position: relative;
+    // overflow: hidden;
+
+
+
+
+    .prefix-border{
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .suffix-border{
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    // 前后文字的颜色
+    .prefix-text,
+    .suffix-text {
+        min-width: 48px;
+        background: var(--gray-200);
+        color: var(--gray-900);
+        padding: 0 12px;
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+        align-items: center;
+        overflow: hidden;
+        border: 1px solid var(--gray-400);
+        .g-disabled-text();
+    }
+
+    .prefix-text {
+        border-right: 0px solid var(--gray-400);
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    .suffix-text {
+        border-left: 0px solid var(--gray-400);
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+    .verification-code{
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: var(--blur-500);
+        cursor: pointer;
+        min-width: 95px;
+        text-align: center;
+        height: 100%;
+        &>span{
+            color: var(--gray-300);
+        }
+        .verification-text {
+            min-width: 84px;
+            height: calc(100% - 10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            color: var(--blue-500);
+        }
+        .verification-text:hover{
+            background: var(--gray-200);
+            border-radius: 4px;
+        }
+    }
+    .dropdown {
+        background: var(--gray-200);
+        color: var(--gray-900);
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+        align-items: center;
+        border-right: 1px solid var(--gray-400);
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+
+}
+
+.message {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    color: var(--red-500);
+    font-size: 12px;
+    line-height: 18px;
+}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder  { /* WebKit, Blink, Edge */
+    color : #C3C7CB;
+}
+
+input:-moz-placeholder,textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #C3C7CB;
+}
+
+input::-moz-placeholder ,textarea::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color : #C3C7CB;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color : #C3C7CB;
+}
+
+input::-ms-input-placeholder ,textarea::-ms-input-placeholder{ /* Microsoft Edge */
+    color : #C3C7CB;
+}
+
+
+.m-input-textarea {
+    //min-width: 512px;
+    //max-width: 600px;
+    border-radius: 4px;
+    //border: 1px solid var(--gray-400);
+    position: relative;
+    display: inline-block;
+    font-size:12px;
+
+    textarea {
+        border-radius: 4px;
+        //min-width: 512px;
+        //max-width: 598px;
+        position: relative;
+        display: block;
+        //resize: vertical;
+        padding: 5px 12px 27px 12px;
+        line-height: 1.5;
+        width: 100%;
+        background-image: none;
+        -webkit-appearance: none;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        .g-disabled-bg();
+
+        :hover {
+            border: none;
+        }
+
+        .g-disabled-text();
+    }
+    .total {
+        position: absolute;
+        text-align: right;
+        bottom: 0px;
+        right: 12px;
+        font-size: 14px;
+        line-height: 22px;
+        background: var(--gray-0);
+        color: var(--gray-400);
+        .g-disabled-bg();
+
+        &.over-color {
+            color: var(--red-500);
+            .g-disabled-text();
+
+            .init-color {
+                color: var(--red-500);
+                .g-disabled-text();
+            }
+        }
+
+        .init-color {
+            color: var(--gray-500);
+            .g-disabled-text();
+        }
+    }
+}
+.error-total{
+    padding-right: 12px;
+    font-size: 14px;
+    line-height: 22px;
+    background: var(--gray-0);
+    color: var(--gray-400);
+    .g-disabled-bg();
+    &.over-color{
+        color: var(--red-500);
+        .g-disabled-text();
+    }
+}
+
+.m-input,.m-input-textarea {
+    .g-disabled-bg();
+    .g-disabled-border();
+
+    .inner-input {
+        flex: 1;
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 4px;
+        border: 1px solid var(--gray-400);
+
+        &:hover,
+        &.active,
+        &.focus {
+            border: 1px solid var(--blue-500);
+        }
+        input,
+        textarea {
+            flex: 1;
+            outline: none;
+            box-shadow: none;
+            border: none;
+            width: 0;
+            height: 0;
+            border-radius: 4px;
+            box-sizing: content-box;
+
+            .g-disabled-bg();
+
+            :hover {
+                border: none;
+            }
+
+            .g-disabled-text();
+        }
+        &.error {
+            position: relative;
+            border: 1px solid var(--red-500) !important;
+
+            .total {
+                color: var(--red-500);
+            }
+        }
+
+        // 普通文本框
+        input {
+            line-height: calc(100% - 2px);
+            min-height: 30px;
+            flex: 1;
+            padding: 0 12px;
+            height: 100%;
+        }
+
+        // 前图标定位
+        .prefix-icon,
+        .suffix-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            min-width: 30px;
+            min-height: 30px;
+            .icon{
+                text-align: center;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 30px;
+                min-height: 30px;
+                &+* {
+                    margin-left: -8px;
+                }
+            }
+
+            .clear {
+                cursor: pointer;
+            }
+        }
+        .prefix-icon-right {
+            margin-right: -8px;
+        }
+
+        .suffix-icon-right {
+            margin-left: -8px;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+// 素有按钮的标签
+.m-icon {
+    display: inline;
+    font-family: icon;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &.rotate {
+        animation: rotate 1s linear infinite;
+        transform-origin: center;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        25% {
+            transform: rotate(90deg);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        75% {
+            transform: rotate(270deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+
+
+    // 尺寸
+    &.large {
+        line-height: 40px;
+        font-size: 20px;
+        height: 40px;
+        width: 40px;
+    }
+
+    &.medium {
+        line-height: 32px;
+        font-size: 16px;
+        height: 32px;
+        width: 32px;
+    }
+
+    &.small {
+        line-height: 28px;
+        font-size: 16px;
+        height: 28px;
+        width: 28px;
+    }
+}

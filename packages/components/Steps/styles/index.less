@@ -1,0 +1,306 @@
+.m-steps {
+    display: flex;
+
+    &-default {
+        background-color: var(--gray-400);
+    }
+
+    &-finish {
+        background-color: var(--blue-500);
+    }
+
+    &-error {
+        background-color: var(--red-500);
+    }
+
+    &-success {
+        background-color: var(--green-500);
+    }
+
+    &-index {
+        font-family: 'Microsoft YaHei UI';
+        font-style: normal;
+        font-weight: 400;
+        color: var(--gray-500);
+    }
+
+    .is-medium {
+        font-size: 16px;
+    }
+
+    .is-small {
+        font-size: 14px;
+    }
+}
+
+.item-position(@left, @top) {
+    left: @left;
+    top: @top;
+}
+
+.node-status(@width, @height) {
+    width: @width;
+    height: @height;
+    border-radius: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-content {
+    font-family: 'Microsoft YaHei';
+    height: 24px;
+    line-height: 24px;
+    color: var(--gray-900);
+    max-width: 160px;
+    min-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-tips {
+    line-height: 18px;
+    font-family: 'Arial';
+    font-size: 12px;
+    color: var(--gray-500);
+    max-width: 160px;
+    word-break: break-all;
+    margin-top: 2px;
+}
+
+.is-vertical {
+    flex-direction: column;
+
+    .m-steps-item-vertical {
+        position: relative;
+        --padding-vertical: 0;
+        padding-bottom: var(--padding-vertical);
+
+        .m-steps-item-medium-tail-default {
+            position: absolute;
+            height: 100%;
+            .item-position(6px, 4px);
+        }
+
+        .m-steps-item-medium-tail-number,
+        .m-steps-item-medium-tail-icon {
+            position: absolute;
+            height: 100%;
+            .item-position(12px, 4px);
+        }
+
+        .m-steps-item-small-tail-default {
+            position: absolute;
+            height: 100%;
+            .item-position(5px, 4px);
+        }
+
+        .m-steps-item-small-tail-number,
+        .m-steps-item-small-tail-icon {
+            position: absolute;
+            height: calc(100% - 2px);
+            .item-position(9px, 4px);
+        }
+
+        .m-steps-dashed {
+            border-left: 1px dashed;
+            border-color: var(--gray-500);
+        }
+
+        .m-steps-solid {
+            border-left: 1px solid;
+            border-color: var(--gray-400);
+        }
+
+        .m-steps-item {
+            position: absolute;
+            left: 0px;
+            top: 4px;
+            background: var(--gray-0);
+        }
+
+        .m-steps-item-wrapper {
+            position: relative;
+            top: -4px;
+            padding: 4px 8px;
+            border-radius: 4px;
+
+            .m-steps-item-title {
+                .item-content();
+            }
+
+            .m-steps-item-prompt {
+                .item-tips()
+            }
+        }
+    }
+}
+
+.is-horizontal {
+    .m-steps-item-horizontal {
+        position: relative;
+        --padding-horizontal: 0;
+        padding-left: var(--padding-horizontal);
+        padding-right: var(--padding-horizontal);
+
+        .m-steps-item-medium-tail-default {
+            position: absolute;
+            width: 100%;
+            .item-position(calc(50% - 16px), 6px);
+        }
+
+        .m-steps-item-medium-tail-number,
+        .m-steps-item-medium-tail-icon {
+            position: absolute;
+            width: 100%;
+            .item-position(calc(50% - 18px), 12px);
+        }
+
+        .m-steps-item-small-tail-default {
+            position: absolute;
+            width: 100%;
+            .item-position(calc(50% - 10px), 5px);
+        }
+
+        .m-steps-item-small-tail-number,
+        .m-steps-item-small-tail-icon {
+            position: absolute;
+            width: 100%;
+            .item-position(calc(50% - 18px), 8px);
+        }
+
+        .m-steps-dashed {
+            border-top: 1px dashed;
+            border-color: var(--gray-500);
+        }
+
+        .m-steps-solid {
+            border-top: 1px solid;
+            border-color: var(--gray-400);
+        }
+
+        .m-steps-item {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 18px);
+            background: var(--gray-0);
+        }
+
+        .m-steps-item-wrapper {
+            position: relative;
+            padding: 4px 8px;
+            border-radius: 4px;
+
+            .m-steps-item-title {
+                .item-content();
+                text-align: center;
+            }
+
+            .m-steps-item-prompt {
+                .item-tips();
+                text-align: center;
+            }
+        }
+    }
+}
+
+.m-steps {
+    .m-steps-item-medium-default {
+        .node-status(12px, 12px);
+        background-color: var(--gray-0);
+    }
+
+    .m-steps-item-small-default {
+        .node-status(10px, 10px);
+        background-color: var(--gray-0);
+    }
+
+    .m-steps-item-medium-number,
+    .m-steps-item-medium-icon {
+        .node-status(24px, 24px);
+        background-color: var(--gray-0);
+    }
+
+    .m-steps-item-small-number,
+    .m-steps-item-small-icon {
+        .node-status(16px, 16px);
+        background-color: var(--gray-0);
+    }
+
+    .m-steps-item-medium-default-content {
+        width: 8px;
+        height: 8px;
+        border-radius: 90px;
+    }
+
+    .m-steps-item-small-default-content {
+        width: 6px;
+        height: 6px;
+        border-radius: 90px;
+    }
+
+    .m-steps-item-medium-number-content,
+    .m-steps-item-medium-icon-content {
+        .node-status(20px, 20px);
+        line-height: 24px;
+        font-size: 12px;
+        border: 1px solid;
+        border-color: var(--gray-500);
+    }
+
+    .m-steps-item-small-number-content,
+    .m-steps-item-small-icon-content {
+        .node-status(14px, 14px);
+        line-height: 14px;
+        font-size: 10px;
+        border: 1px solid;
+        border-color: var(--gray-500);
+    }
+
+    .m-steps-item-active {
+        border-color: var(--blue-500) !important;
+        background-color: var(--blue-500);
+
+        .m-steps-index {
+            color: var(--gray-0);
+        }
+    }
+
+    .m-steps-item-success {
+        border-color: var(--blue-500) !important;
+
+        .m-steps-index {
+            color: var(--gray-0);
+        }
+    }
+
+    .m-bg-default {
+        background-color: var(--gray-400);
+    }
+
+    &-item-wrapper-hover {
+        &:hover {
+            cursor: pointer;
+            background-color: var(--gray-200);
+        }
+    }
+
+    &-item-wrapper-not {
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+
+    &-item-label-not {
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+
+    &-item-label-hover {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.demo {
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+
+.move {
+    &-enter-active,
+    &-leave-active {
+        transition: opacity 1s;
+    }
+
+    &-enter-from,
+    &-leave-to {
+        opacity: 0;
+    }
+
+    &-enter-to,
+    &-leave-from {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,160 @@
+@import '../../../theme/tools.less';
+@import './tag.less';
+
+// 素有按钮的标签
+.m-select {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	// 清理按钮样式
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border-radius: 0;
+	background-color: var(--gray-0);
+	width: max-content;
+	line-height: var(--line-xxxxl);
+	font-size: var(--font-m);
+	border: none;
+	cursor: pointer;
+	box-sizing: border-box;
+	position: relative;
+	font-weight: 400;
+	height: 32px;
+	&[mode='tags'] {
+		height: auto;
+		min-height: 32px;
+	}
+	&-icon {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 30px;
+		font-family: icon;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: transform 0.2s;
+		color: var(--gray-500);
+	}
+	&-placeholder {
+		color: var(--gray-400);
+	}
+	&-rotate {
+		transform: rotate(-180deg);
+	}
+	&-inner {
+		height: 100%;
+		width: 100%;
+		border: 1px solid var(--gray-400);
+		border-radius: var(--big-radius);
+		transition: border-color 0.2s;
+		min-width: 96px;
+		box-sizing: border-box;
+		padding-right: 24px;
+		padding-left: 12px;
+		min-height: 30px;
+		outline: none;
+		display: flex;
+		&-tags {
+			margin-right: 4px;
+			height: fit-content;
+			flex-basis: 60%;
+			&[searchable='false'] {
+				flex-basis: 100%;
+			}
+		}
+		&-multiple {
+			overflow: hidden;
+			flex-shrink: 0;
+			white-space: nowrap;
+			&-num {
+				padding: 0 4px;
+				color: var(--primary-color);
+				font-weight: 500;
+			}
+			&-tips {
+				display: flex;
+				gap: 4px;
+				flex-wrap: wrap;
+				max-width: 420px;
+			}
+		}
+		&-value {
+			display: inline-block;
+			flex-basis: 60%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			flex-shrink: 0;
+			flex-grow: 1;
+		}
+		&-prefix {
+			display: inline-flex;
+			font-size: var(--font-m);
+			font-weight: 400;
+			color: var(--notes-color);
+			flex-shrink: 0;
+			max-width: 40%;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			align-items: center;
+			&[searchable='false'] {
+				max-width: 50%;
+			}
+		}
+		&-input {
+			flex-basis: 40%;
+			display: inline-block;
+			border: none;
+			outline: none;
+			min-width: 10%;
+			flex-grow: 1;
+			font-weight: 400;
+			font-size: var(--font-m);
+			color: var(--gray-900);
+			caret-color: var(--primary-color);
+			background: inherit;
+			padding-top: 2px;
+			&:focus {
+				border: none;
+				outline: none;
+			}
+			&::placeholder {
+				color: var(--gray-400);
+			}
+		}
+
+		&:hover {
+			border: 1px solid var(--blue-400);
+		}
+		&[disabled='true'] {
+			background-color: var(--gray-200);
+			cursor: not-allowed;
+		}
+		&[disabled='true']:hover {
+			border: 1px solid var(--gray-400);
+		}
+
+		&[active='true'] {
+			border: 1px solid var(--blue-600);
+		}
+		&[mode='tags'] {
+			padding-left: 4px;
+		}
+		.m-select-tag {
+			margin-right: 4px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&:after {
+		border: none;
+	}
+}

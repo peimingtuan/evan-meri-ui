@@ -1,0 +1,61 @@
+.m-tag {
+	padding: var(--m-tag-padding);
+	border-radius: var(--m-tag-border-radius);
+	white-space: nowrap;
+	box-sizing: border-box;
+	cursor: default;
+	align-items: center;
+	display: inline-flex;
+	color: var(--m-tag-color);
+	background-color: var(--m-tag-bg-color);
+}
+
+.m-tag.m-tag-dot {
+	align-items: center;
+}
+
+.m-tag > .m-tag__dot {
+	height: 6px;
+	width: 6px;
+	border-radius: 3px;
+	margin-right: 8px;
+	background-color: var(--m-tag-dot-bg-color);
+}
+
+.m-tag.m-tag-small {
+	height: 18px;
+	font-size: var(--font-sm);
+}
+
+.m-tag.m-tag-large,
+.m-tag.m-tag-type,
+.m-tag.m-tag-dot {
+	height: 24px;
+	font-size: var(--font-m);
+	min-width: 40px;
+	line-height: var(--line-xxxl);
+	justify-content: center;
+}
+
+.m-tag-small + .m-tag-small {
+	margin-left: 4px;
+}
+
+.m-tag-large + .m-tag-large {
+	margin-left: 8px;
+}
+
+.m-tag-type + .m-tag-type {
+	margin-left: 12px;
+}
+
+.m-tag-dot + .m-tag-dot {
+	margin-left: 12px;
+}
+
+.m-tag__icon {
+	margin-right: 4px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}

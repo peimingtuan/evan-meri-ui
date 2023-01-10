@@ -1,0 +1,265 @@
+@import '../../../theme/tools.less';
+
+// 素有按钮的标签
+.m-modal {
+    * {
+        box-sizing: border-box;
+      }
+    .m-modal-bg {
+        position: fixed;
+        z-index: 1000;
+        background-color: hsla(208, 7%, 42%, .5);
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .m-modal-main-type {
+        position: fixed;
+        z-index: 5000;
+        border-radius: 4px;
+        left: 50%;
+        margin-left: -210px;
+        top: 120px;
+        width: 420px;
+        background-color: #fff;
+        box-shadow: 0 20px 30px rgb(31 35 41 / 15%);
+        padding-top: 16px;
+
+        .m-modal-info-svg {
+            left: 32px;
+            position: absolute;
+            top: 24px;
+        }
+
+        .m-modal-title {
+            font-size: 16px;
+            color: var(--gray-900);
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 28px;
+            position: relative;
+            width: 100%;
+            padding-left: 72px;
+            padding-top: 8px;
+            .m-modal-text {
+                font-weight: 700;
+                color: var(--gray-900);
+                font-size: 16px;
+                font-weight: 600;
+                max-width: calc(100% - 80px);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        .m-modal-content {
+            min-height: auto;
+            width: calc(100% - 32px);
+            padding-left: 72px;
+        }
+
+        .m-modal-content-main-text {
+            
+            color: #626C78;
+            margin-top: 8px;
+            line-height: 22px;
+        }
+
+        .m-modal-footer {
+            font-size: 0;
+            padding: 24px 32px 20px;
+            text-align: right;
+            width: 100%;
+            max-height: 76px;
+            .m-button{
+                padding: 0 24px ;
+            }
+            button:first-child {
+                margin-right: 10px;
+            }
+        }
+
+    }
+
+    .m-modal-main {
+        background: #FFFFFF;
+        box-shadow: 0px 20px 30px rgba(31, 35, 41, 0.15);
+        border-radius: 8px;
+        min-width: 420px;
+        position: fixed;
+        z-index: 5000;
+        top: 60px;
+        left: 50%;
+
+        header {
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #EDF1F5;
+            padding-right: 35px;
+            .m-modal-main-title {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 24px;
+                color: #1B2129;
+                padding: 16px 32px;
+            }
+
+            .m-modal-main-svg {
+                // position: absolute;
+                // top: 12px;
+                // right: 35px;
+                cursor: pointer;
+                height: 24px;
+            }
+        }
+
+        .m-modal-main-content {
+            padding: 20px;
+            overflow: auto;
+            max-height: calc(100vh - 250px);;
+        }
+
+        .m-main-handle {
+            display: flex;
+            height: 80px;
+            padding-right: 24px;
+            align-items: center;
+            justify-content: right;
+            width: 100%;
+
+            button:first-child {
+                margin-right: 10px;
+            }
+        }
+
+        .m-main-handle-shadow {
+            box-shadow: 0px -2px 8px rgba(31, 35, 41, 0.1);
+        }
+    }
+
+    .m-modal-full {
+        background: #FFFFFF;
+        box-shadow: 0px 20px 30px rgba(31, 35, 41, 0.15);
+        // border-radius: 8px;
+        width: 100vw;
+        position: fixed;
+        z-index: 5000;
+        left:0;
+        top:0;
+        header {
+            height: 56px;
+            position: relative;
+            border-bottom: 1px solid #EDF1F5;
+            .m-modal-full-title {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 24px;
+                color: #1B2129;
+                padding: 16px 32px;
+            }
+            .m-modal-full-svg {
+                position: absolute;
+                top: 16px;
+                right: 35px;
+                cursor: pointer;
+            }
+        }
+
+        .m-modal-full-content {
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .m-full-handle {
+            font-size: 0;
+            display: flex;
+            height: 72px;
+            padding:20px 32px 20px 0;
+            align-items: center;
+            justify-content: right;
+            width: 100%;
+
+            button:first-child {
+                margin-right: 10px;
+            }
+        }
+
+        .m-full-handle-shadow {
+            box-shadow: 0px -2px 8px rgba(31, 35, 41, 0.1);
+        }
+    }
+}
+.m-modal-opc {
+    // z-index:1000;
+    // opacity: 0;
+    // transition: opacity 2s linear;
+}
+
+.m-modal-fade {
+    &-enter-active {
+        animation: bounceInUi 0.3s ease-out;
+    }
+    &-leave-active {
+        animation: bounceOutUi 0.3s ease-in;
+    }
+    @keyframes bounceInUi{
+        from{
+            opacity:0;
+            transform :translate3d(0, 24px, 0)
+        }
+      to{
+        opacity:1;
+        transform :translate3d(0, 0, 0)
+      }
+        
+    }
+    @keyframes bounceOutUi{
+        from{
+            opacity :1;
+            transform :translate3d(0, 0, 0)
+        }
+        
+        to{
+            opacity: 0;
+            transform :translate3d(0, 24px, 0)
+        }
+    } 
+   
+}
+
+.m-modalBox-fade{
+    &-enter-active {
+        animation: bounceInBox 0.3s ease-out;
+    }
+    &-leave-active {
+        animation: bounceOutBox 0.3s ease-in;
+    }
+    @keyframes bounceInBox{
+        from{
+            opacity:0;
+            // transform :translate3d(0, 24px, 0)
+        }
+      to{
+        opacity:1;
+        // transform :translate3d(0, 0, 0)
+      }
+        
+    }
+    @keyframes bounceOutBox{
+        from{
+            opacity :1;
+            // transform :translate3d(0, 0, 0)
+        }
+        
+        to{
+            opacity: 0;
+            // transform :translate3d(0, 24px, 0)
+        }
+    } 
+}

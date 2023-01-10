@@ -1,0 +1,23 @@
+.footer .container {
+    height: inherit !important;
+}
+
+.sidebar-mask .container {
+    height: inherit !important;
+}
+
+.home-features .container {
+    height: inherit !important;
+}
+
+.no-sidebar .footer {
+    background-color: #fff !important;
+}
+
+.next-and-prev-link .container {
+    height: inherit !important;
+}
+
+.sidebar>.sidebar-links>.sidebar-link+.sidebar-link {
+    padding-top: .5rem !important;
+}

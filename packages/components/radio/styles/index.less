@@ -1,0 +1,85 @@
+@import '../../../theme/tools.less';
+
+// 素有按钮的标签
+.m-radio {
+  display: inline-flex;
+  margin-right: var(--margin);
+  vertical-align: middle;
+  line-height: var(--size);
+  font-size: var(--size);
+  cursor: pointer;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .bg-blue {
+    background-color: var(--blue-500);
+
+    .g-hover({
+      background-color:var(--blue-400);
+    });
+
+    .g-active({
+      background-color:var(--blue-600);
+    });
+    .g-disabled({
+      background: var(--gray-400);
+    });
+  }
+
+  .bg-white {
+    background-color: var(--gray-0);
+  }
+
+  &.font-gray {
+    color: var(--gray-900);
+    .g-disabled-text();
+  }
+
+  .border-gray {
+    border-color: var(--gray-500);
+
+    .g-hover({
+      border-color:var(--blue-500);
+    });
+
+    .g-active({
+      border-color:var(--blue-600);
+    });
+    .g-disabled-border();
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .radio {
+    display: inline-block;
+    box-sizing: border-box;
+    height: var(--size);
+    width: calc(var(--size));
+    border-radius: 50%;
+    margin-right: var(--middelMargin);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+
+    // 绑定不同按钮的颜色
+    &.uncheck {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.checked {
+      border-color: var(--blue-500);
+
+      .icon {
+        display: block;
+        background: var(--blue-500);
+        width: calc(var(--size) - 8px);
+        height: calc(var(--size) - 8px);
+        border-radius: 50%;
+      }
+    }
+  }
+}
